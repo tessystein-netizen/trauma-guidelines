@@ -1,1017 +1,508 @@
-
-
 <!DOCTYPE html>
-
 <html lang="de">
-
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Trauma-Assessment Leitfaden (NFS)</title>
-
     <!-- Tailwind CSS CDN für schnelles, responsive Styling -->
-
     <script src="https://cdn.tailwindcss.com"></script>
-
     <style>
-
         /* Spezifische Styling-Anpassungen */
-
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
-
         body {
-
             font-family: 'Inter', sans-serif;
-
             background-color: #f7f9fb;
-
         }
-
         .tab-content {
-
             display: none;
-
         }
-
         .active-tab {
-
             display: block;
-
         }
-
         .tab-button.active {
-
             border-bottom-width: 4px;
-
             border-color: #ef4444; /* Rot-600 */
-
             color: #1f2937; /* Grau-800 */
-
         }
-
         .pulse-rate {
-
             color: #ef4444; /* Rot */
-
             font-weight: 700;
-
         }
-
         .rr-bp {
-
             color: #10b981; /* Grün */
-
             font-weight: 700;
-
         }
-
         .crt-time {
-
             color: #f59e0b; /* Gelb-Orange */
-
             font-weight: 700;
-
         }
-
     </style>
-
 </head>
-
 <body class="p-4 md:p-8 bg-gray-50 min-h-screen">
 
- 
-
     <div class="max-w-4xl mx-auto bg-white shadow-2xl rounded-xl overflow-hidden">
-
-       
-
+        
         <header class="p-6 bg-red-600 text-white">
-
             <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Trauma-Assessment Leitfaden (NFS)</h1>
-
             <p class="text-lg mt-1 font-light">Fokus: Schock, Rekap-Zeit und Tödliche Trias</p>
-
         </header>
 
- 
-
         <!-- Navigations-Tabs -->
-
         <nav class="flex border-b border-gray-200 bg-gray-50">
-
             <button class="tab-button py-4 px-4 sm:px-6 text-sm font-medium text-gray-500 hover:text-gray-700 hover:bg-gray-100 transition duration-150 active" onclick="showSection('section1')">
-
                 1. ABCDE Quick-Check
-
             </button>
-
             <button class="tab-button py-4 px-4 sm:px-6 text-sm font-medium text-gray-500 hover:text-gray-700 hover:bg-gray-100 transition duration-150" onclick="showSection('section2')">
-
                 2. Dynamisches Schock-Ass.
-
             </button>
-
             <button class="tab-button py-4 px-4 sm:px-6 text-sm font-medium text-gray-500 hover:text-gray-700 hover:bg-gray-100 transition duration-150" onclick="showSection('section3')">
-
                 3. Tödliche Trias & DCR
-
             </button>
-
             <button class="tab-button py-4 px-4 sm:px-6 text-sm font-medium text-gray-500 hover:text-gray-700 hover:bg-gray-100 transition duration-150" onclick="showSection('section4')">
-
                 4. Training: Simulation
-
             </button>
-
         </nav>
-
- 
 
         <main class="p-6 sm:p-8">
 
- 
-
             <!-- Sektion 1: ABCDE -->
-
             <div id="section1" class="tab-content active-tab">
-
                 <h2 class="text-2xl font-bold text-red-600 mb-4">1. ABCDE Quick-Check (Treat First What Kills First)</h2>
-
-               
-
+                
                 <div class="space-y-6">
-
                     <div>
-
                         <h3 class="font-semibold text-lg text-gray-900 border-l-4 border-red-500 pl-3 mb-1">A – Airway (Atemwegssicherung)</h3>
-
                         <p class="text-gray-600">**Priorität:** Freie Atemwege herstellen und Zervikal-Schutz (C-Spine) sicherstellen.</p>
-
                         <ul class="list-disc list-inside ml-4 text-sm text-gray-700 mt-2">
-
                             <li>Patency (Offenheit) prüfen, Fremdkörper entfernen.</li>
-
                             <li>Definitive Atemwegssicherung vorbereiten bei GCS &le; 8.</li>
-
                         </ul>
-
                     </div>
 
- 
-
                     <div>
-
                         <h3 class="font-semibold text-lg text-gray-900 border-l-4 border-red-500 pl-3 mb-1">B – Breathing (Beatmung und Oxygenierung)</h3>
-
                         <p class="text-gray-600">**Priorität:** Immediate Life Threats (Spannungspneumothorax, offener Pneu) ausschließen.</p>
-
                         <ul class="list-disc list-inside ml-4 text-sm text-gray-700 mt-2">
-
                             <li>Kontrolle der Atemfrequenz, Symmetrie der Thorax-Exkursion.</li>
-
                             <li>O2-Gabe (10-15 L/min über Maske).</li>
-
                             <li>Bei Spannungs-Pneu: Sofortige Nadeldekompression (nach Protokoll).</li>
-
                         </ul>
-
                     </div>
-
-                   
-
+                    
                     <div>
-
                         <h3 class="font-semibold text-lg text-gray-900 border-l-4 border-red-500 pl-3 mb-1">C – Circulation (Kreislauf und Blutungskontrolle)</h3>
-
                         <p class="text-gray-600">**Priorität:** Blutungskontrolle und schnelles Schock-Assessment.</p>
-
                         <ul class="list-disc list-inside ml-4 text-sm text-gray-700 mt-2">
-
                             <li>**Externe Blutung:** Tourniquet (Hoch & Fest), Druckverband.</li>
-
                             <li>**Interne Blutung:** Fokussierung auf die **vier kritischen Höhlen** (Thorax, Abdomen, Becken, Oberschenkel). Stabile Schienung.</li>
-
                             <li>**Kritischer Hinweis (CRT):** Normale BD schließt Schock nicht aus! Die CRT ist der Frühindikator für kompensierten Schock.</li>
-
                         </ul>
-
                     </div>
-
-                   
-
+                    
                     <div>
-
                         <h3 class="font-semibold text-lg text-gray-900 border-l-4 border-red-500 pl-3 mb-1">D – Disability (Neurologische Einschätzung)</h3>
-
                         <p class="text-gray-600">**Priorität:** GCS-Bestimmung (Baseline) und Pupillenstatus.</p>
-
                         <ul class="list-disc list-inside ml-4 text-sm text-gray-700 mt-2">
-
                             <li>Schnelle Beurteilung: Wachheit, Reaktion (AVPU/GCS).</li>
-
                             <li>Hypoglykämie ausschließen.</li>
-
                         </ul>
-
                     </div>
-
-                   
-
+                    
                     <div>
-
                         <h3 class="font-semibold text-lg text-gray-900 border-l-4 border-red-500 pl-3 mb-1">E – Exposure (Umfeld und Umwelt)</h3>
-
                         <p class="text-gray-600">**Priorität:** Entkleiden, vollständige Untersuchung, MAXIMALE Wärmeerhaltung.</p>
-
                         <ul class="list-disc list-inside ml-4 text-sm text-gray-700 mt-2">
-
                             <li>Schwere Hypothermie ist ein Todesurteil.</li>
-
                             <li>Aktive und passive Wärmemaßnahmen sofort einleiten.</li>
-
                         </ul>
-
                     </div>
-
                 </div>
-
             </div>
-
- 
 
             <!-- Sektion 2: Schock-Assessment -->
-
             <div id="section2" class="tab-content">
-
                 <h2 class="text-2xl font-bold text-red-600 mb-4">2. Dynamisches Schock-Assessment & Monitoring</h2>
 
- 
-
                 <h3 class="font-semibold text-xl text-gray-900 mb-3">Rekapillarisierungszeit (CRT) – Der zuverlässigste Frühindikator</h3>
-
-               
-
+                
                 <div class="space-y-4">
-
                     <p class="text-gray-700">Die CRT misst die Zeit, die das Blut benötigt, um in die Kapillaren zurückzukehren. Sie ist das **direkteste Maß** für die periphere Gewebeperfusion und reagiert **früher** als Puls und Blutdruck.</p>
 
- 
-
                     <div class="bg-blue-50 p-4 rounded-lg border border-blue-200">
-
                         <p class="font-bold text-blue-800 mb-1">Präzise Messtechnik:</p>
-
                         <ul class="list-disc list-inside ml-4 text-sm text-blue-700">
-
                             <li>**Druck:** 5 Sekunden lang eine stabile Kompression auf das Nagelbett ausüben.</li>
-
                             <li>**Ort:** Sternales Nagelbett (am wenigsten anfällig für Kälte) oder Fingerkuppe.</li>
-
                             <li>**Kritische Interpretation:** CRT &ge; 2 Sekunden &rarr; Kritische Minderperfusion (Schock).</li>
-
                         </ul>
-
                     </div>
-
-                   
-
+                    
                     <h4 class="font-semibold text-lg text-gray-900 mt-4">CRT vs. Blutdruck (RR) – Der entscheidende Unterschied</h4>
-
                     <p class="text-gray-700">Der Körper ist auf die Aufrechterhaltung des RR angewiesen. Bei Blutverlust oder Schock erfolgt eine massive **Vasokonstriktion** (Gefäßverengung) in der Peripherie, um das Blut zu zentralisieren. Der RR bleibt dadurch **noch normal**, aber die Kapillaren in der Haut sind bereits mangelperfundiert. Die **verlängerte CRT** ist somit das einzige Frühwarnzeichen des **kompensierten Schocks**.</p>
-
                 </div>
-
-               
-
-                <h3 class="font-semibold text-xl text-gray-900 mt-6 mb-3">Permissive Hypotension (PH) – Klare BD-Ziele</h3>
-
-                <p class="text-gray-700">Ziel der PH ist es, eine Hypotonie zu tolerieren, um labile Gerinnsel nicht abzuspringen und den Blutverlust zu minimieren – aber nicht so weit, dass essentielle Organe geschädigt werden.</p>
-
-               
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
-
-                    <div class="bg-red-50 p-4 rounded-lg border border-red-200">
-
-                        <p class="font-bold text-red-800 mb-1">Trauma ohne SHT (Gehirn-Verletzung):</p>
-
-                        <p class="text-xl font-extrabold text-red-600">Ziel: 80 – 90 mmHg (systolisch)</p>
-
-                    </div>
-
-                    <div class="bg-yellow-50 p-4 rounded-lg border border-yellow-200">
-
-                        <p class="font-bold text-yellow-800 mb-1">Trauma mit SHT (GCS &le; 8):</p>
-
-                        <p class="text-xl font-extrabold text-yellow-600">Ziel: &ge; 100 mmHg (systolisch)</p>
-
-                    </div>
-
-                </div>
-
-                <p class="text-sm text-gray-500 mt-3">Der schnellstmögliche Transport zur definitiven chirurgischen Versorgung ist immer das oberste Ziel (Load & Go).</p>
-
-            </div>
-
-           
-
-            <!-- Sektion 3: Tödliche Trias -->
-
-            <div id="section3" class="tab-content">
-
-                <h2 class="text-2xl font-bold text-red-600 mb-4">3. Tödliche Trias & Damage Control Resuscitation (DCR)</h2>
-
-               
-
-                <h3 class="font-semibold text-xl text-gray-900 mb-3">Der Fatale Kreislauf: Azidose &harr; Hypothermie &harr; Koagulopathie</h3>
-
-                <p class="text-gray-700 mb-4">Das Zusammentreffen dieser drei Faktoren führt zu einem sich selbst verstärkenden, tödlichen Kreislauf. DCR zielt darauf ab, diese Trias präklinisch sofort zu durchbrechen.</p>
-
                 
-
-                <div class="space-y-6">
-
-                    <div>
-
-                        <h4 class="font-semibold text-lg text-gray-900 border-l-4 border-red-500 pl-3 mb-1">Hypothermie (Kälte)</h4>
-
-                        <p class="text-gray-600">**Problem:** Sinkende Kerntemperatur (unter 35°C).</p>
-
-                        <p class="text-sm text-gray-700 mt-1">**Wirkung auf Gerinnung:** Die Gerinnungsfaktoren (Enzyme) und Thrombozyten funktionieren nur optimal bei 37°C. Schon 35°C reduzieren die Gerinnungsleistung drastisch.</p>
-
-                        <p class="font-bold text-red-600 mt-2">DCR-Maßnahme: Maximale Wärmeerhaltung (Aktiv & Passiv).</p>
-
+                <h3 class="font-semibold text-xl text-gray-900 mt-6 mb-3">Permissive Hypotension (PH) – Klare BD-Ziele</h3>
+                <p class="text-gray-700">Ziel der PH ist es, eine Hypotonie zu tolerieren, um labile Gerinnsel nicht abzuspringen und den Blutverlust zu minimieren – aber nicht so weit, dass essentielle Organe geschädigt werden.</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                    <div class="bg-red-50 p-4 rounded-lg border border-red-200">
+                        <p class="font-bold text-red-800 mb-1">Trauma ohne SHT (Gehirn-Verletzung):</p>
+                        <p class="text-xl font-extrabold text-red-600">Ziel: 80 – 90 mmHg (systolisch)</p>
                     </div>
-
- 
-
-                    <div>
-
-                        <h4 class="font-semibold text-lg text-gray-900 border-l-4 border-red-500 pl-3 mb-1">Azidose (Übersäuerung)</h4>
-
-                        <p class="text-gray-600">**Problem:** Sauerstoffmangel im Gewebe (Schock) führt zu anaerobem Stoffwechsel und Laktat-Anstieg.</p>
-
-                        <p class="text-sm text-gray-700 mt-1">**Wirkung auf Gerinnung:** Ein Blut-pH-Wert von nur &le; 7,1 hemmt die Aktivität aller Gerinnungsfaktoren (Enzyme) um bis zu 50%. Die Säure stoppt die Gerinnungskaskade.</p>
-
-                        <p class="font-bold text-red-600 mt-2">DCR-Maßnahme: Schnelle Wiederherstellung der Perfusion (durch Blutungskontrolle).</p>
-
+                    <div class="bg-yellow-50 p-4 rounded-lg border border-yellow-200">
+                        <p class="font-bold text-yellow-800 mb-1">Trauma mit SHT (GCS &le; 8):</p>
+                        <p class="text-xl font-extrabold text-yellow-600">Ziel: &ge; 100 mmHg (systolisch)</p>
                     </div>
-
- 
-
-                    <div>
-
-                        <h4 class="font-semibold text-lg text-gray-900 border-l-4 border-red-500 pl-3 mb-1">Koagulopathie (TIK)</h4>
-
-                        <p class="text-gray-600">**Problem:** Trauma-induzierte Gerinnungsstörung (TIK).</p>
-
-                        <p class="text-sm text-gray-700 mt-1">**Pathomechanismus:** Massiver Schock löst Hyperfibrinolyse aus (Gerinnsel lösen sich zu schnell auf).</p>
-
-                        <p class="font-bold text-red-600 mt-2">DCR-Maßnahme: Tranexamsäure (TXA). **Dosierung:** 1 g i.v. über 10 Minuten. **Zeitfenster:** Zwingend innerhalb der ersten 3 Stunden!</p>
-
-                    </div>
-
                 </div>
-
+                <p class="text-sm text-gray-500 mt-3">Der schnellstmögliche Transport zur definitiven chirurgischen Versorgung ist immer das oberste Ziel (Load & Go).</p>
             </div>
+            
+            <!-- Sektion 3: Tödliche Trias -->
+            <div id="section3" class="tab-content">
+                <h2 class="text-2xl font-bold text-red-600 mb-4">3. Tödliche Trias & Damage Control Resuscitation (DCR)</h2>
+                
+                <h3 class="font-semibold text-xl text-gray-900 mb-3">Der Fatale Kreislauf: Azidose &harr; Hypothermie &harr; Koagulopathie</h3>
+                <p class="text-gray-700 mb-4">Das Zusammentreffen dieser drei Faktoren führt zu einem sich selbst verstärkenden, tödlichen Kreislauf. DCR zielt darauf ab, diese Trias präklinisch sofort zu durchbrechen.</p>
+                
+                <div class="space-y-6">
+                    <div>
+                        <h4 class="font-semibold text-lg text-gray-900 border-l-4 border-red-500 pl-3 mb-1">Hypothermie (Kälte)</h4>
+                        <p class="text-gray-600">**Problem:** Sinkende Kerntemperatur (unter 35°C).</p>
+                        <p class="text-sm text-gray-700 mt-1">**Wirkung auf Gerinnung:** Die Gerinnungsfaktoren (Enzyme) und Thrombozyten funktionieren nur optimal bei 37°C. Schon 35°C reduzieren die Gerinnungsleistung drastisch.</p>
+                        <p class="font-bold text-red-600 mt-2">DCR-Maßnahme: Maximale Wärmeerhaltung (Aktiv & Passiv).</p>
+                    </div>
 
- 
+                    <div>
+                        <h4 class="font-semibold text-lg text-gray-900 border-l-4 border-red-500 pl-3 mb-1">Azidose (Übersäuerung)</h4>
+                        <p class="text-gray-600">**Problem:** Sauerstoffmangel im Gewebe (Schock) führt zu anaerobem Stoffwechsel und Laktat-Anstieg.</p>
+                        <p class="text-sm text-gray-700 mt-1">**Wirkung auf Gerinnung:** Ein Blut-pH-Wert von nur &le; 7,1 hemmt die Aktivität aller Gerinnungsfaktoren (Enzyme) um bis zu 50%. Die Säure stoppt die Gerinnungskaskade.</p>
+                        <p class="font-bold text-red-600 mt-2">DCR-Maßnahme: Schnelle Wiederherstellung der Perfusion (durch Blutungskontrolle).</p>
+                    </div>
+
+                    <div>
+                        <h4 class="font-semibold text-lg text-gray-900 border-l-4 border-red-500 pl-3 mb-1">Koagulopathie (TIK)</h4>
+                        <p class="text-gray-600">**Problem:** Trauma-induzierte Gerinnungsstörung (TIK).</p>
+                        <p class="text-sm text-gray-700 mt-1">**Pathomechanismus:** Massiver Schock löst Hyperfibrinolyse aus (Gerinnsel lösen sich zu schnell auf).</p>
+                        <p class="font-bold text-red-600 mt-2">DCR-Maßnahme: Tranexamsäure (TXA). **Dosierung:** 1 g i.v. über 10 Minuten. **Zeitfenster:** Zwingend innerhalb der ersten 3 Stunden!</p>
+                    </div>
+                </div>
+            </div>
 
             <!-- Sektion 4: Training (Simulation) -->
-
             <div id="section4" class="tab-content">
-
                 <h2 class="text-2xl font-bold text-red-600 mb-4">4. Training: Dynamisches Trauma-Szenario</h2>
-
                 <p class="text-gray-700 mb-6">Wählen Sie das Szenario und treffen Sie die Prioritätsentscheidungen. Jede Aktion kostet wertvolle Zeit (2 Minuten).</p>
 
- 
-
                 <div class="flex items-center space-x-3 mb-6">
-
                     <label for="scenarioSelect" class="font-semibold text-gray-700">Szenario wählen:</label>
-
                     <select id="scenarioSelect" class="p-2 border border-gray-300 rounded-md focus:ring-red-500 focus:border-red-500" onchange="resetScenario()">
-
                         <option value="1">1. Der Kompensierte (Femur, Hypothermie)</option>
-
                         <option value="2">2. Der Dekompensierte mit SHT</option>
-
                         <option value="3">3. Der Verdeckte (Okkluder Schock)</option>
-
                     </select>
-
                 </div>
-
- 
 
                 <div id="statusArea" class="bg-gray-100 p-4 rounded-lg shadow-inner mb-6">
-
                     <h3 class="text-lg font-bold text-gray-800 mb-2">Patienten-Status:</h3>
-
                     <div id="scenarioDescription" class="text-gray-700 mb-3">Wählen Sie ein Szenario, um zu beginnen.</div>
-
                     <div id="vitalSigns" class="grid grid-cols-2 gap-3 text-sm">
-
                         <div><span class="font-medium">Zeit:</span> <span id="timeDisplay" class="font-bold text-red-600">0 Min</span></div>
-
                         <div><span class="font-medium">Puls:</span> <span id="pulseDisplay" class="pulse-rate">N/A</span></div>
-
                         <div><span class="font-medium">RR (sys):</span> <span id="rrDisplay" class="rr-bp">N/A</span></div>
-
                         <div><span class="font-medium">CRT:</span> <span id="crtDisplay" class="crt-time">N/A</span></div>
-
                         <div><span class="font-medium">Temp:</span> <span id="tempDisplay" class="text-gray-700">N/A</span></div>
-
                         <div><span class="font-medium">GCS:</span> <span id="gcsDisplay" class="text-gray-700">N/A</span></div>
-
                     </div>
-
                 </div>
-
-               
-
+                
                 <div id="actionButtons" class="space-y-3">
-
                     <button id="startButton" class="w-full bg-red-600 text-white py-3 rounded-lg font-bold hover:bg-red-700 transition duration-150" onclick="startScenario()">Szenario starten</button>
-
                     <button class="action-button w-full bg-blue-500 text-white py-3 rounded-lg font-bold hover:bg-blue-600 transition duration-150 hidden" onclick="handleAction('airway')">A: Atemweg sichern / OPA/NPA</button>
-
                     <button class="action-button w-full bg-blue-500 text-white py-3 rounded-lg font-bold hover:bg-blue-600 transition duration-150 hidden" onclick="handleAction('breathing')">B: Nadeldekompression / O2-Gabe</button>
-
                     <button class="action-button w-full bg-red-500 text-white py-3 rounded-lg font-bold hover:bg-red-600 transition duration-150 hidden" onclick="handleAction('bleeding')">C: Blutungskontrolle / Beckenschlinge anlegen</button>
-
                     <button class="action-button w-full bg-yellow-500 text-white py-3 rounded-lg font-bold hover:bg-yellow-600 transition duration-150 hidden" onclick="handleAction('txa')">C: TXA (Tranexamsäure) 1g i.v. geben</button>
-
                     <button class="action-button w-full bg-gray-600 text-white py-3 rounded-lg font-bold hover:bg-gray-700 transition duration-150 hidden" onclick="handleAction('fluid')">C: Flüssigkeit / i.v. Zugang (Kristalloide)</button>
-
                     <button class="action-button w-full bg-green-500 text-white py-3 rounded-lg font-bold hover:bg-green-600 transition duration-150 hidden" onclick="handleAction('warmth')">E: Aktive und passive Wärmeerhaltung</button>
-
                     <button class="action-button w-full bg-red-700 text-white py-3 rounded-lg font-bold hover:bg-red-800 transition duration-150 hidden" onclick="handleAction('transport')">L&G: Sofortiger Transport zur Klinik anmelden</button>
-
                 </div>
-
- 
 
                 <div id="feedback" class="mt-6 p-4 rounded-lg hidden"></div>
-
             </div>
 
- 
-
         </main>
-
     </div>
 
- 
-
     <script>
-
         let gameState = {};
-
         let timePassed = 0;
-
         let scenarioData = {};
-
         let gameInterval = null;
 
- 
-
         const SCENARIOS = {
-
             '1': {
-
                 name: "1. Der Kompensierte (Femur, Hypothermie)",
-
                 desc: "Motorradfahrer, 30 J., gestürzt, offene Femurfraktur rechts (externer Blutverlust kontrolliert), wirkt blass, kalte Umgebung. Priorität: Schock bekämpfen, TIK verhindern, Wärme.",
-
                 vitals: { time: 0, pulse: 118, rr: 105, crt: 3, temp: 35.8, gcs: 15 },
-
                 targetRR: 90, // Permissive Hypotension
-
                 actions: {
-
                     bleeding: { effect: { pulse: -15, crt: -1.5 }, msg: "Blutungskontrolle erfolgreich! Das Herz wird entlastet.", critical: true },
-
                     txa: { effect: { txaGiven: true }, msg: "TXA wurde frühzeitig zur Prävention der TIK gegeben.", critical: true },
-
                     warmth: { effect: { temp: 0.5 }, msg: "Aktive Wärmemaßnahmen eingeleitet. Kampf gegen die Hypothermie beginnt.", critical: true },
-
                     fluid: { effect: { rr: 5 }, msg: "Flüssigkeitsgabe (Kristalloide): RR steigt leicht, aber Vorsicht: keine massive Volumengabe (PH)!." },
-
                     transport: { effect: { win: true }, msg: "Stabilisiert und bereit für den Transport zur definitiven chirurgischen Versorgung.", required: ['bleeding', 'txa', 'warmth'] }
-
                 },
-
                 deterioration: (state) => {
-
                     // Hypothermie verschlechtert alles
-
                     if (state.temp <= 35.5) {
-
                         state.pulse += 5; // Tachykardie
-
                         state.rr -= 5;    // Dekompensation beginnt
-
                         state.crt += 0.5;
-
                         if (state.temp <= 35.0) state.rr -= 10; // Kritischer Verfall
-
                     }
-
                     if (state.temp > 36.0) state.pulse -= 3; // Leichte Verbesserung, wenn warm
-
                 }
-
             },
-
             '2': {
-
                 name: "2. Der Dekompensierte mit SHT",
-
                 desc: "Sturz aus Höhe, 65 J., Kopfplatzwunde (kontrolliert), GCS 7, unregelmäßige Atmung. Puls 125, RR 95/60. Priorität: Atemweg & zerebraler Perfusionsdruck.",
-
                 vitals: { time: 0, pulse: 125, rr: 95, crt: 2.5, temp: 36.5, gcs: 7 },
-
                 targetRR: 100, // KEINE PH! Wegen SHT
-
                 actions: {
-
                     airway: { effect: { gcs: 0, vital: true }, msg: "Atemweg gesichert (GCS < 8). Jetzt B & C priorisieren.", critical: true },
-
                     bleeding: { effect: { pulse: -5, crt: -0.2 }, msg: "Kleine äußere Blutung kontrolliert.", critical: true },
-
                     fluid: { effect: { rr: 10, pulse: -5, crt: -0.5 }, msg: "Aggressive Flüssigkeitsgabe zur Anhebung des Perfusionsdrucks.", critical: true },
-
                     txa: { effect: { txaGiven: true }, msg: "TXA gegeben, da schweres Trauma vorliegt.", required: ['fluid'] },
-
                     transport: { effect: { win: true }, msg: "Atemweg gesichert, BD über 100 mmHg. Sofortiger Transport in Neurochirurgie.", required: ['airway', 'fluid'] }
-
                 },
-
                 deterioration: (state) => {
-
                     // Wenn RR unter 100 liegt, fällt der GCS (Hirn-Minderperfusion)
-
                     if (state.rr < 100) {
-
                         state.gcs = Math.max(state.gcs - 1, 3); // GCS fällt bis Minimum 3
-
                         state.pulse += 5;
-
                     } else if (state.rr >= 100 && state.gcs < 8) {
-
                         state.gcs = Math.min(state.gcs + 0.5, 8); // leichte Besserung bei Druck
-
                     }
-
                 }
-
             },
-
             '3': {
-
                 name: "3. Der Verdeckte (Okkluder Schock)",
-
                 desc: "Unfall im Wald, 45 J., Sturz auf den Bauch/Becken. Externe Befunde unauffällig, aber Klopfschmerz im Abdomen. Patient ist blass, leicht kaltschweißig. Priorität: Innere Blutung vermuten, DCR starten.",
-
                 vitals: { time: 0, pulse: 105, rr: 115, crt: 3, temp: 36.3, gcs: 15 },
-
                 targetRR: 90, // Permissive Hypotension
-
                 actions: {
-
                     bleeding: { effect: { timeCost: 2 }, msg: "KEINE externe Blutung gefunden. Wichtiger Zeitverlust! Die Blutung ist intern.", critical: true },
-
                     txa: { effect: { txaGiven: true }, msg: "TXA gegeben, da innere Blutung vermutet wird.", critical: true },
-
                     warmth: { effect: { temp: 0.5 }, msg: "Aktive Wärmemaßnahmen eingeleitet.", critical: true },
-
                     transport: { effect: { win: true }, msg: "Innere Blutung erkannt, DCR gestartet. Sofortiger Transport zur chirurgischen Versorgung.", required: ['txa', 'warmth'] }
-
                 },
-
                 deterioration: (state) => {
-
                     // Trotz hohem RR (Anfangskompensation) schreitet Schock voran
-
                     if (state.time > 4) state.pulse += 5;
-
                     if (state.time > 8) state.crt += 0.5;
-
                     if (state.time > 12) {
-
                         state.rr -= 10; // Plötzlicher Dekompensationsverfall
-
                         state.pulse += 10;
-
                     }
-
                 }
-
             }
-
         };
 
- 
-
         function updateDisplay() {
-
             document.getElementById('timeDisplay').textContent = `${gameState.time} Min`;
-
             document.getElementById('pulseDisplay').textContent = `${gameState.pulse} /min`;
-
             document.getElementById('rrDisplay').textContent = `${gameState.rr} mmHg (Ziel < ${scenarioData.targetRR + 1} mmHg)`;
-
             document.getElementById('crtDisplay').textContent = `${gameState.crt} Sek`;
-
             document.getElementById('tempDisplay').textContent = `${gameState.temp.toFixed(1)} °C`;
-
             document.getElementById('gcsDisplay').textContent = `${gameState.gcs}`;
 
- 
-
             // Warnungen für kritische Zustände
-
             document.getElementById('pulseDisplay').classList.toggle('text-red-600', gameState.pulse > 120);
-
             document.getElementById('crtDisplay').classList.toggle('text-red-600', gameState.crt >= 3);
-
             document.getElementById('tempDisplay').classList.toggle('text-red-600', gameState.temp < 35.5);
-
             document.getElementById('rrDisplay').classList.toggle('text-red-600', gameState.rr < 80);
-
             document.getElementById('gcsDisplay').classList.toggle('text-red-600', gameState.gcs <= 8);
-
         }
-
- 
 
         function appendFeedback(message, isCritical = false) {
-
             const feedbackDiv = document.getElementById('feedback');
-
             feedbackDiv.classList.remove('hidden');
-
             const p = document.createElement('p');
-
             p.className = `mt-1 p-2 rounded-lg text-sm ${isCritical ? 'bg-red-100 text-red-800 font-bold' : 'bg-green-100 text-green-800'}`;
-
             p.textContent = `[${gameState.time} Min] ${message}`;
-
             feedbackDiv.prepend(p);
-
         }
-
- 
 
         function resetScenario() {
-
             clearInterval(gameInterval);
-
             const selectedScenario = document.getElementById('scenarioSelect').value;
-
             scenarioData = SCENARIOS[selectedScenario];
-
             gameState = {
-
                 ...JSON.parse(JSON.stringify(scenarioData.vitals)), // Deep copy of initial vitals
-
                 txaGiven: false,
-
                 airwaySecured: false,
-
                 bleedingControlled: false,
-
                 isSimulating: false,
-
                 targetRR: scenarioData.targetRR
-
             };
-
             timePassed = 0;
 
- 
-
             document.getElementById('scenarioDescription').textContent = scenarioData.desc;
-
             document.getElementById('startButton').classList.remove('hidden');
-
             document.querySelectorAll('.action-button').forEach(btn => btn.classList.add('hidden'));
-
             document.getElementById('feedback').classList.add('hidden');
-
             document.getElementById('feedback').innerHTML = '<h4 class="font-semibold text-gray-800">Maßnahmenprotokoll:</h4>';
-
             updateDisplay();
-
         }
-
- 
 
         function startScenario() {
-
             if (gameState.isSimulating) return;
 
- 
-
             gameState.isSimulating = true;
-
             document.getElementById('startButton').classList.add('hidden');
-
             document.querySelectorAll('.action-button').forEach(btn => btn.classList.remove('hidden'));
-
             document.getElementById('scenarioSelect').disabled = true;
-
-           
-
+            
             appendFeedback("Szenario gestartet. Treffen Sie die erste Prioritätsentscheidung!", true);
 
- 
-
             gameInterval = setInterval(() => {
-
                 if (!gameState.isSimulating) return;
-
-               
-
+                
                 timePassed += 1;
-
                 gameState.time += 1;
-
-               
-
+                
                 // Verschlechterung anwenden
-
                 scenarioData.deterioration(gameState);
 
- 
-
                 // Prüfen auf kritische Zustände oder Gewinn
-
                 checkWinCondition();
-
                 
-
                 updateDisplay();
 
- 
-
             }, 1000); // 1 Sekunde Echtzeit = 1 Minute im Spiel
-
         }
-
- 
 
         function checkWinCondition() {
-
             // Allgemeiner Fail-Zustand (Massive Dekompensation)
-
             if (gameState.rr < 60 || gameState.pulse > 160) {
-
                 appendFeedback("FATALER VERLAUF: Der Patient ist massiv dekompensiert und wahrscheinlich nicht mehr zu retten. Prioritäten verpasst.", true);
-
                 endScenario();
-
                 return;
-
             }
-
- 
 
             // Spezifische Sieg-Bedingung prüfen
-
             const transportAction = scenarioData.actions.transport;
-
             if (transportAction && transportAction.required) {
-
                 const requiredActionsMet = transportAction.required.every(key => gameState[key] || gameState.actions?.[key]?.effect?.vital);
 
- 
-
                 if (requiredActionsMet && gameState.time >= 8) { // Transport nur nach 8 Minuten sinnvoll
-
                     appendFeedback("ERFOLGREICH! Alle kritischen DCR-Maßnahmen eingeleitet und der Patient ist transportbereit.", true);
-
                     appendFeedback(`Gesamtzeit bis Transport: ${gameState.time} Minuten.`, true);
-
                     endScenario();
-
                 }
-
             }
-
         }
-
- 
 
         function handleAction(actionKey) {
-
             if (!gameState.isSimulating) return;
 
- 
-
             const action = scenarioData.actions[actionKey];
-
             if (!action) return;
-
-           
-
+            
             // Kosten: Jede Aktion kostet 2 Minuten
-
             gameState.time += 2;
-
             updateDisplay();
-
- 
 
             const feedbackMessage = action.msg;
-
             let criticalFeedback = false;
 
- 
-
             // 1. Spezifische Logik für die gewählte Aktion
-
             switch(actionKey) {
-
                 case 'bleeding':
-
                     if (scenarioData.name.includes("Verdeckte")) {
-
                          appendFeedback(action.msg, true); // Zeitverlust
-
                     } else {
-
                          gameState.bleedingControlled = true;
-
                          criticalFeedback = action.critical;
-
                     }
-
                     break;
-
                 case 'fluid':
-
                     // Warnung bei SHT, wenn schon gut perfundiert (PH-Ziel überschritten)
-
                     if (scenarioData.name.includes("SHT") && gameState.rr >= 100) {
-
                         appendFeedback("ACHTUNG! Der RR liegt bereits bei oder über 100 mmHg. Weitere Flüssigkeit kann den intrakraniellen Druck erhöhen!", true);
-
                     } else if (!scenarioData.name.includes("SHT") && gameState.rr >= 90) {
-
                         appendFeedback("ACHTUNG! Der RR liegt bereits bei oder über 90 mmHg. Weitere Flüssigkeit kann labile Gerinnsel zerstören (Permissive Hypotension beachten).", true);
-
                     }
-
                     break;
-
                 case 'airway':
-
                      gameState.airwaySecured = true;
-
                      criticalFeedback = action.critical;
-
                      break;
-
                 case 'warmth':
-
                     gameState.warmth = true;
-
                     criticalFeedback = action.critical;
-
                     break;
-
                 case 'txa':
-
                     gameState.txaGiven = true;
-
                     criticalFeedback = action.critical;
-
                     break;
-
                 case 'transport':
-
                     checkWinCondition();
-
                     if (!gameState.win) {
-
                         appendFeedback("Transport zu früh! Es fehlen noch kritische DCR-Maßnahmen (Wärme, TXA oder Blutungskontrolle). Zeitverlust.", true);
-
                     }
-
                     return; // Beendet die Funktion frühzeitig
-
             }
-
- 
 
             // 2. Effekt anwenden
-
             if (action.effect) {
-
                 Object.keys(action.effect).forEach(key => {
-
                     if (key === 'timeCost') {
-
                         // Wird oben behandelt
-
                     } else if (key === 'txaGiven') {
-
                         gameState.txaGiven = true;
-
                     } else if (key === 'temp') {
-
                         gameState.temp += action.effect.temp;
-
                     } else if (typeof gameState[key] === 'number') {
-
                          gameState[key] += action.effect[key];
-
                     }
-
                 });
-
             }
-
- 
 
             // 3. Feedback anzeigen
-
             appendFeedback(feedbackMessage, criticalFeedback);
 
- 
-
             updateDisplay();
-
         }
-
- 
 
         function endScenario() {
-
             gameState.isSimulating = false;
-
             clearInterval(gameInterval);
-
             document.querySelectorAll('.action-button').forEach(btn => btn.disabled = true);
-
             document.getElementById('scenarioSelect').disabled = false;
-
         }
-
- 
 
         // Initialisierung beim Laden
-
         document.addEventListener('DOMContentLoaded', () => {
-
             resetScenario();
-
         });
 
- 
-
         function showSection(sectionId) {
-
             document.querySelectorAll('.tab-content').forEach(section => {
-
                 section.classList.remove('active-tab');
-
             });
-
             document.querySelectorAll('.tab-button').forEach(button => {
-
                 button.classList.remove('active');
-
             });
-
- 
 
             document.getElementById(sectionId).classList.add('active-tab');
-
             document.querySelector(`.tab-button[onclick*='${sectionId}']`).classList.add('active');
-
-           
-
+            
             if (sectionId === 'section4') {
-
                 resetScenario();
-
             } else {
-
                  clearInterval(gameInterval);
-
             }
-
         }
-
     </script>
-
 </body>
-
 </html>
